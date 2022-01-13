@@ -1,0 +1,30 @@
+<table id="data-list" class="table table-bordered table-striped" style="width:100%;">
+	<thead>
+		<tr>
+			<th>No.</th>
+			<th>Nama Sistem</th>
+			<th>Gambar</th>
+			<th>Logo</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php
+			$no = 1;
+			if(is_array($List)) {
+				foreach($List as $data => $rows) {
+		?>
+		<tr id="themelist" class="themelist" data-id="<?php echo $rows['SubMenuId']; ?>" style="cursor: pointer;">
+			<td class="tengah"><?php echo $no; ?></td>
+			<td class="kiri"><?php echo $rows['SubMenuName']; ?></td>
+			<td class="tengah"><?php echo $rows['SubMenuStatus']; ?></td>
+			<td class="tengah"><?php echo $rows['Controller']; ?></td>
+		</tr>
+		<?php
+					$no++;
+				}
+			}
+		?>
+	</tbody>
+</table>
+<div id="ModalThemes"></div>
+<?php $this -> load -> view('themes/themes-js'); ?>
